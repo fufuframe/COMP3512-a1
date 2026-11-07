@@ -14,12 +14,6 @@ const resultsContainer = document.getElementById('results');
 
 
 
-
-for (const product of list) {
-    resultsContainer.appendChild(createCard(product));
-  }
-
-
 function createCard(product) {
     // the card container
     const card = document.createElement('div');
@@ -29,6 +23,9 @@ function createCard(product) {
     const imgEl = document.createElement('img');
     imgEl.src = product.thumbnail;
     imgEl.alt = product.title;
+    imgEl.addEventListener('click', () => {
+      alert(product.id);
+    });
     card.appendChild(imgEl);
   
     // the title
@@ -47,13 +44,16 @@ function createCard(product) {
     const btn = document.createElement('button');
     btn.textContent = '+';
     btn.addEventListener('click', () => {
-      console.log('Added:', product.title);
+      alert(`${product.id} - ${product.title}`);
     });
     card.appendChild(btn);
   
     return card;
   }
 
+  for (const product of products.slice(0, 20)) {
+    resultsContainer.appendChild(createCard(product));
+  }
 
 
 
