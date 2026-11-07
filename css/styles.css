@@ -1,3 +1,41 @@
-/* COMP 3512 Assignment 2 — styles */
+
 
 [hidden] { display: none !important; }
+
+   #results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  /* One product card */
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;   /* stack image, title, price, button vertically */
+    background: #fff;
+  }
+  
+  /* Product image: fixed height*/
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;      /* shows the whole product without distortion */
+    cursor: pointer;         
+  }
+  
+  .card .title {
+    font-weight: 600;
+    margin: 0.5rem 0 0.25rem;
+  }
+  
+  .card .price {
+    color: #2a7;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  
